@@ -1,0 +1,126 @@
+@import "tailwindcss";
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #ff5a1f;
+  --color-primary-light: #ff8a5c;
+  --color-primary-dark: #d9440f;
+  --color-ink: #0d0d0d;
+
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 3s ease-in-out infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-14px); }
+  }
+  @keyframes glow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+}
+
+:root {
+  --bg: #fafafa;
+  --bg-elevated: #ffffff;
+  --bg-subtle: #f2f2f3;
+  --text: #0d0d0d;
+  --text-muted: #5c5c60;
+  --border: rgba(13, 13, 13, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(13, 13, 13, 0.08);
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0a0a0b;
+  --bg-elevated: #131315;
+  --bg-subtle: #1a1a1d;
+  --text: #f5f5f6;
+  --text-muted: #a1a1a8;
+  --border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(19, 19, 21, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  color-scheme: dark;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 999px;
+}
+
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, var(--color-primary) 0%, #ff8a5c 45%, var(--color-primary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

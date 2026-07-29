@@ -1,0 +1,16 @@
+{
+  "name": "Michael Awuah Sarpong — Full Stack Developer",
+  "short_name": "Michael.dev",
+  "description": "Full Stack Developer specializing in Laravel, React, React Native & Flutter.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0d0d",
+  "theme_color": "#0d0d0d",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
