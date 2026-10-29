@@ -11,6 +11,7 @@ import {
   FiMail,
   FiMessageSquare,
   FiStar,
+  FiUser,
 } from "react-icons/fi";
 import toast from "react-hot-toast";
 import { useAuth } from "@/hooks/useAuth";
@@ -26,6 +27,7 @@ const navItems = [
   { to: "/admin/testimonials", label: "Testimonials", icon: FiStar },
   { to: "/admin/bookings", label: "Bookings", icon: FiMail },
   { to: "/admin/messages", label: "Messages", icon: FiMessageSquare },
+  { to: "/admin/profile", label: "About Photo", icon: FiUser },
 ];
 
 export function AdminLayout() {

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://michaelsarpong.dev/sitemap.xml
+Sitemap: https://michael.ofi-cia.com/sitemap.xml

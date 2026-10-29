@@ -38,6 +38,7 @@ const AdminTestimonialsList = lazy(() => import("@/pages/admin/testimonials/List
 const AdminTestimonialForm = lazy(() => import("@/pages/admin/testimonials/Form"));
 const AdminBookings = lazy(() => import("@/pages/admin/Bookings"));
 const AdminMessages = lazy(() => import("@/pages/admin/Messages"));
+const AdminProfile = lazy(() => import("@/pages/admin/Profile"));
 
 export const router = createBrowserRouter([
   {
@@ -89,6 +90,7 @@ export const router = createBrowserRouter([
           { path: "testimonials/:id/edit", element: <AdminTestimonialForm /> },
           { path: "bookings", element: <AdminBookings /> },
           { path: "messages", element: <AdminMessages /> },
+          { path: "profile", element: <AdminProfile /> },
         ],
       },
     ],

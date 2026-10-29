@@ -16,7 +16,7 @@ const personJsonLd = {
   jobTitle: siteConfig.role,
   email: siteConfig.email,
   telephone: siteConfig.phone,
-  url: "https://michaelsarpong.dev",
+  url: "https://michael.ofi-cia.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: siteConfig.location,

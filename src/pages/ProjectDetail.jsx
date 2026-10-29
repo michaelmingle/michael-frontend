@@ -93,19 +93,26 @@ export default function ProjectDetail() {
       <section className="px-6 py-16">
         <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-[1fr_0.6fr]">
           <div className="space-y-10">
-            <Reveal>
+            {project.problem && (
+<Reveal>
               <h2 className="font-display text-2xl font-bold">The Problem</h2>
               <p className="mt-3 leading-relaxed text-[var(--text-muted)]">{project.problem}</p>
             </Reveal>
-            <Reveal>
+)}
+            {project.solution && (
+<Reveal>
               <h2 className="font-display text-2xl font-bold">The Solution</h2>
               <p className="mt-3 leading-relaxed text-[var(--text-muted)]">{project.solution}</p>
             </Reveal>
-            <Reveal>
+)}
+            {project.architecture && (
+<Reveal>
               <h2 className="font-display text-2xl font-bold">Architecture</h2>
               <p className="mt-3 leading-relaxed text-[var(--text-muted)]">{project.architecture}</p>
             </Reveal>
-            <Reveal>
+)}
+            {project.challenges?.length > 0 && (
+<Reveal>
               <h2 className="font-display text-2xl font-bold">Challenges</h2>
               <ul className="mt-3 space-y-2">
                 {project.challenges.map((c) => (
@@ -115,10 +122,12 @@ export default function ProjectDetail() {
                 ))}
               </ul>
             </Reveal>
+)}
           </div>
 
           <div className="space-y-6">
-            <Reveal direction="left">
+            {project.features?.length > 0 && (
+<Reveal direction="left">
               <Card>
                 <h3 className="font-display text-lg font-bold">Features</h3>
                 <StaggerGroup className="mt-4 space-y-2">
@@ -130,8 +139,10 @@ export default function ProjectDetail() {
                 </StaggerGroup>
               </Card>
             </Reveal>
+)}
 
-            <Reveal direction="left" delay={0.05}>
+            {project.results?.length > 0 && (
+<Reveal direction="left" delay={0.05}>
               <Card>
                 <h3 className="font-display text-lg font-bold">Results</h3>
                 <ul className="mt-4 space-y-3">
@@ -143,6 +154,7 @@ export default function ProjectDetail() {
                 </ul>
               </Card>
             </Reveal>
+)}
 
             {project.testimonial && (
               <Reveal direction="left" delay={0.1}>

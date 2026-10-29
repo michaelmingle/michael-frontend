@@ -1,10 +1,12 @@
 import { Helmet } from "react-helmet-async";
 import { siteConfig } from "@/data/siteConfig";
 
-const SITE_URL = "https://michaelsarpong.dev";
+const SITE_URL = "https://michael.ofi-cia.com";
 
 export function Seo({ title, description, image, path = "", type = "website", jsonLd }) {
-  const fullTitle = title ? `${title} · ${siteConfig.name}` : `${siteConfig.name} — ${siteConfig.role}`;
+  const fullTitle = title
+    ? `${title} | ${siteConfig.name}`
+    : `${siteConfig.name} — ${siteConfig.role}`;
   const desc = description ?? siteConfig.tagline;
   const url = `${SITE_URL}${path}`;
   const img = image ?? `${SITE_URL}/og-image.png`;

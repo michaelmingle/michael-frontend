@@ -9,8 +9,11 @@ import { CTASection } from "@/components/sections/CTASection";
 import { CareerTimeline } from "@/components/sections/CareerTimeline";
 import { siteConfig } from "@/data/siteConfig";
 import { missionVision, education } from "@/data/timeline";
+import { useProfile } from "@/hooks/api/useProfile";
 
 export default function About() {
+  const { data: profile } = useProfile();
+
   return (
     <>
       <Seo path="/about" title="About" description="Learn about Michael Awuah Sarpong's story, mission, and journey as a full stack developer." />
@@ -20,11 +23,19 @@ export default function About() {
         <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <Reveal direction="right">
             <TiltCard maxTilt={5}>
-              <GeneratedCover
-                seed="michael-profile"
-                label={siteConfig.name}
-                className="aspect-[4/5] w-full rounded-3xl border border-[var(--border)]"
-              />
+              {profile?.photo ? (
+                <img
+                  src={profile.photo}
+                  alt={siteConfig.name}
+                  className="aspect-[4/5] w-full rounded-3xl border border-[var(--border)] object-cover"
+                />
+              ) : (
+                <GeneratedCover
+                  seed="michael-profile"
+                  label={siteConfig.name}
+                  className="aspect-[4/5] w-full rounded-3xl border border-[var(--border)]"
+                />
+              )}
             </TiltCard>
             <Card className="-mt-10 mx-4 flex items-center justify-between gap-3 py-4 text-sm" hover={false}>
               <span className="flex items-center gap-2 text-[var(--text-muted)]">

@@ -7,7 +7,7 @@ export function CareerTimeline() {
       <div className="absolute left-[15px] top-2 bottom-2 w-px bg-[var(--border)] sm:left-[19px]" />
       <div className="space-y-10">
         {timeline.map((item, i) => (
-          <Reveal key={item.year} direction="left" delay={i * 0.03}>
+          <Reveal key={`${item.year}-${i}`} direction="left" delay={i * 0.03}>
             <div className="relative flex gap-6 pl-0">
               <div className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary shadow-[0_0_0_4px_var(--bg)] sm:h-10 sm:w-10">
                 <span className="h-2 w-2 rounded-full bg-white" />

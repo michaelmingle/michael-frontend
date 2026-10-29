@@ -24,7 +24,7 @@ export const siteConfig = {
     { name: "Twi", level: "Native" },
   ],
   stats: [
-    { label: "Years Experience", value: 3, suffix: "+" },
+    { label: "Years Experience", value: 8, suffix: "+" },
     { label: "Projects Delivered", value: 10, suffix: "+" },
     { label: "Technologies", value: 12, suffix: "+" },
     { label: "Happy Clients", value: 5, suffix: "+" },
@@ -36,7 +36,7 @@ export const siteConfig = {
     projects: "/projects",
   },
   social: {
-    github: "https://github.com/michaelsarpong",
+    github: "https://github.com/mingle",
     linkedin: "https://linkedin.com/in/michael-awuah-sarpong-717176195",
     facebook: "https://facebook.com/michaelsarpong",
     instagram: "https://instagram.com/michaelsarpong",
